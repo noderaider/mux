@@ -741,8 +741,6 @@ module.exports = focusNode;
 /* 13 */
 /***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-
 Object.defineProperty(exports, "__esModule", { value: true });
 const React = __webpack_require__(3);
 const ReactDOM = __webpack_require__(17);
