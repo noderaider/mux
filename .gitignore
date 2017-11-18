@@ -4,6 +4,8 @@ logs
 npm-debug.log*
 package-lock.json
 
+*_junit.xml
+
 # Runtime data
 pids
 *.pid

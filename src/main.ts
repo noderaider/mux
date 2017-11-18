@@ -1,7 +1,6 @@
-/*
 import * as electron from "electron";
-import * as path from "path";
 import * as url from "url";
+import * as path from "path";
 
 // Module to control application life.
 const app = electron.app;
@@ -14,7 +13,7 @@ let mainWindow: any;
 
 function createWindow () {
   // Create the browser window.
-  mainWindow = new BrowserWindow({width: 800, height: 600});
+  mainWindow = new electron.BrowserWindow({width: 800, height: 600});
 
   // and load the index.html of the app.
   mainWindow.loadURL(url.format({
@@ -56,26 +55,3 @@ app.on("activate", function () {
     createWindow();
   }
 });
-
-// In this file you can include the rest of your app's specific main process
-// code. You can also put them in separate files and require them here.
-
-*/
-import { app, BrowserWindow } from "electron";
-declare var __dirname: string;
-let mainWindow: Electron.BrowserWindow;
-
-function onReady() {
-  mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600
-  });
-
-  const fileName = `file://${__dirname}/index.html`;
-  mainWindow.loadURL(fileName);
-  mainWindow.on("close", () => app.quit());
-}
-
-app.on("ready", () => onReady());
-app.on("window-all-closed", () => app.quit());
-console.log(`Electron Version ${app.getVersion()}`);

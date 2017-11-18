@@ -4,15 +4,30 @@
   "description": "An advanced browsing utility.",
   "main": "main.js",
   "scripts": {
-    "_start": "electron .",
+    "prebuild": "rimraf dist",
+    "build": "webpack --config webpack.config.js",
     "prestart": "yarn run build",
     "start": "electron ./dist/main.js",
-    "build": "webpack --config webpack.config.js",
-    "pretest": "webpack --config webpack.tests.config.js",
-    "test": "jest"
+    "test": "jest",
+    "preversion": "npm test"
   },
   "jest": {
-    "testRegex": "/__tests__/.*\\.jsx?",
+    "transform": {
+      "^.+\\.tsx?$": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "moduleFileExtensions": [
+      "ts",
+      "tsx",
+      "js",
+      "json"
+    ],
+    "testRegex": "/__tests__/.*\\.test\\.(ts|tsx)$",
+    "globals": {
+      "__JEST__": true,
+      "ts-jest": {
+        "useBabelrc": true
+      }
+    },
     "testResultsProcessor": "./node_modules/jest-junit"
   },
   "jest-junit": {
@@ -21,6 +36,38 @@
     "classNameTemplate": "{classname}-{title}",
     "titleTemplate": "{classname}-{title}",
     "usePathForSuiteName": "true"
+  },
+  "dependencies": {
+    "react": "^16.1.1",
+    "react-dom": "^16.1.1"
+  },
+  "devDependencies": {
+    "@types/invariant": "^2.2.29",
+    "@types/jest": "^21.1.6",
+    "@types/react": "^16.0.25",
+    "@types/react-dom": "^16.0.3",
+    "@types/sinon": "^4.0.0",
+    "babel-core": "^6.26.0",
+    "babel-jest": "^21.2.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015-node": "^6.1.1",
+    "babel-preset-react": "^6.24.1",
+    "cross-env": "^5.1.1",
+    "electron": "^1.7.9",
+    "html-webpack-plugin": "^2.30.1",
+    "jest": "^21.2.1",
+    "jest-junit": "^3.3.0",
+    "rimraf": "^2.6.2",
+    "sinon": "^4.1.2",
+    "standard": "^10.0.3",
+    "standard-loader": "^6.0.1",
+    "ts-jest": "^21.2.2",
+    "ts-loader": "^3.1.1",
+    "tslib": "^1.8.0",
+    "tslint": "^5.8.0",
+    "tslint-loader": "^3.5.3",
+    "typescript": "^2.6.1",
+    "webpack": "^3.8.1"
   },
   "repository": "https://github.com/noderaider/mux",
   "keywords": [
@@ -33,32 +80,5 @@
     "multiplexer"
   ],
   "author": "Cole Chamberlain",
-  "license": "MIT",
-  "devDependencies": {
-    "@types/jest": "^21.1.6",
-    "@types/react": "^16.0.25",
-    "@types/react-dom": "^16.0.3",
-    "babel-core": "^6.26.0",
-    "babel-eslint": "^8.0.2",
-    "babel-loader": "^7.1.2",
-    "babel-preset-es2015-node": "^6.1.1",
-    "babel-preset-react": "^6.24.1",
-    "electron": "^1.7.9",
-    "html-webpack-plugin": "^2.30.1",
-    "jest": "^21.2.1",
-    "jest-junit": "^3.3.0",
-    "standard": "^10.0.3",
-    "standard-loader": "^6.0.1",
-    "ts-loader": "^3.1.1",
-    "tslib": "^1.8.0",
-    "tslint": "^5.8.0",
-    "tslint-config-standard": "^7.0.0",
-    "tslint-loader": "^3.5.3",
-    "typescript": "^2.6.1",
-    "webpack": "^3.8.1"
-  },
-  "dependencies": {
-    "react": "^16.1.1",
-    "react-dom": "^16.1.1"
-  }
+  "license": "MIT"
 }
