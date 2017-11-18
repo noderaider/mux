@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+      "experimentalDecorators": true,
+      "target": "ES6",
+      "module": "commonjs",
+      "moduleResolution": "node",
+      "jsx": "react",
+      "pretty": true,
+      "noImplicitReturns": true,
+      "sourceMap": false,
+      "allowSyntheticDefaultImports": false,
+      "importHelpers": true,
+      "typeRoots": ["./node_modules/@types"],
+      "lib": [
+        "es2017",
+        "dom"
+      ]
+    },
+    "exclude": [ "node_modules" ]
+  }
+  

@@ -1,0 +1,24 @@
+<testsuites name="jest tests">
+  <testsuite name="\__tests__\host.test.js" errors="0" failures="0" skipped="0" timestamp="2017-11-18T04:17:44" time="0.633" tests="1">
+    <testcase classname="Host-PlaceHolderPassingTest" name="Host-PlaceHolderPassingTest" time="0.003">
+    </testcase>
+  </testsuite>
+  <testsuite name="\__tests__\gui.test.js" errors="0" failures="1" skipped="0" timestamp="2017-11-18T04:17:44" time="0.624" tests="1">
+    <testcase classname="GUI-PlaceHolderFailingTest" name="GUI-PlaceHolderFailingTest" time="0.005">
+      <failure>Error: expect(received).toBe(expected)
+
+Expected value to be (using ===):
+  4
+Received:
+  3
+    at Object.test (C:\git\noderaider\mux\__tests__\gui.test.js:74:27)
+    at Object.asyncFn (C:\git\noderaider\mux\node_modules\jest-jasmine2\build\jasmine_async.js:124:345)
+    at resolve (C:\git\noderaider\mux\node_modules\jest-jasmine2\build\queue_runner.js:46:12)
+    at new Promise (&lt;anonymous&gt;)
+    at mapper (C:\git\noderaider\mux\node_modules\jest-jasmine2\build\queue_runner.js:34:499)
+    at promise.then (C:\git\noderaider\mux\node_modules\jest-jasmine2\build\queue_runner.js:74:39)
+    at &lt;anonymous&gt;
+    at process._tickCallback (internal/process/next_tick.js:188:7)</failure>
+    </testcase>
+  </testsuite>
+</testsuites>
