@@ -1,6 +1,6 @@
 {
   "name": "@raider/mux",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "An advanced browsing utility.",
   "main": "main.js",
   "scripts": {
